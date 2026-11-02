@@ -22,7 +22,7 @@ Nos hacemos la pregunta motivadora: **¿puede una computadora identificar patron
 
 ## Parte 2: Clusters
 
-Partamos de una base, ¿qué es un cluster? Las definiciones varían, pero propongo las siguientes como para tener una base común desde la cual avanzar:
+Partamos del principio, ¿qué es un cluster? Las definiciones varían, pero propongo las siguientes como para tener una base común desde la cual avanzar:
 
 - Un cluster es un conjunto de entidades que son parecidas, y entidades de diferentes clusters que no son parecidas.
 - Un cluster es un agregado de puntos en el espacio de prueba de forma tal que la distancia entre dos puntos cualesquiera dentro de un cluster es menor que la distancia entre cualquier punto en el cluster a uno no en él.
@@ -33,13 +33,13 @@ Las definiciones pueden ser confusas a primera mirada, pero van a esclarecerse a
 
 Siendo este el primer artículo en el blog, me parece importante hacer un paréntesis respecto a clarificar de qué hablamos cuando hablamos de características, y por qué son tan importantes.
 
-Las características o atributos de un conjunto de datos son representaciones de algún concepto o cosa física del mundo real, resumido en un número. Por ejemplo, podemos considerar un conjunto de datos de flores, donde el largo de sus pétalos es una característica. De esta forma, le estamos dando cierta "personalidad" a los datos en función de sus atributos, y también le estamos dando forma al problema al elegir qué atributos usar. Resulta importante entonces saber qué atributos usar dentro de un conjunto de datos. Si queremos agrupar flores según su tamaño, ¿nos importa su color? La respuesta a esto tampoco es trivial, pues el color puede ser un factor funcional al tamaño de una flor (disculpen al autor por cualquier información errónea debido a su falta de conocimiento de flora). El punto de esto es que la elección de características es muy importante, dado que su correcta formación puede darnos el agrupamiento clave que estábamos buscando, y nos permite omitir información superflua. También, visto desde otra perspectiva, al utilizar características que a priori parecen no tener relación, pueden aparecer relaciones ocultas que el usuario no encontró a ojo desnudo. Volviendo a la idea del largo de los pétalos de una flor, un lector despierto puede haber notado que presentamos implícitamente la primera idea de parecido. En mi conjunto de datos las flores se agrupan por tamaño de pétalo. ¿Por qué? Porque quiero, y porque me sirve para el dominio de mi problema. El algoritmo de clustering entonces, debería agrupar por estas características. No perdamos de vista que es posible acotar el problema hasta llegar a algo que nos sirva.
+Las características o atributos de un conjunto de datos son representaciones de algún concepto o cosa física del mundo real, resumido en un número. Por ejemplo, podemos considerar un conjunto de datos de flores, donde el largo de sus pétalos es una característica. De esta forma, le estamos dando cierta "personalidad" a los datos en función de sus atributos, y también le estamos dando forma al problema al elegir qué atributos usar. Resulta importante entonces saber qué atributos usar dentro de un conjunto de datos. Si queremos agrupar flores según su tamaño, ¿nos importa su color? La respuesta a esto tampoco es trivial, pues el color puede ser un factor funcional al tamaño de una flor (disculpen al autor por cualquier información errónea debido a su falta de conocimiento de flora). El punto de esto es que la elección de características es muy importante, dado que su correcta formación puede darnos el agrupamiento clave que estábamos buscando, y nos permite omitir información superflua. También, visto desde otra perspectiva, al utilizar características que a priori parecen no tener relación, pueden aparecer relaciones ocultas que el usuario no encontró a ojo desnudo. Volviendo a la idea del largo de los pétalos de una flor, un lector despierto puede haber notado que presentamos implícitamente la primera idea de **parecido**. En mi conjunto de datos las flores se agrupan por tamaño de pétalo. ¿Por qué? Porque quiero, y porque me sirve para el dominio de mi problema. El algoritmo de clustering entonces, debería agrupar por estas características. No perdamos de vista que es posible acotar el problema hasta llegar a algo que nos sirva.
 
 ### Parte 2.2. Medidas de proximidad
 
 Con la introducción de qué es un cluster y qué son las características, y por qué son importantes, resuelta, vayamos a la siguiente cuestión que nos compete: ¿de qué hablamos cuando hablamos de cercanía?
 
-Como les adelanté previamente, esto no es una pregunta trivial. Dependerá mucho de los algoritmos utilizados y del contexto del problema. Presento entonces el problema que nos acompañará durante este artículo: un conjunto de datos de clientes basado en sus ingresos anuales y su puntuación de gastos (*spending score*). Este conjunto de datos nos permite ver, en función de cuánto cobra un cliente, su comportamiento de gastos del 1 al 100, 1 siendo clientes conservadores respecto a gastos, y 100 un cliente con alta propensión al gasto, que compra de manera frecuente o adquiere productos de alto valor. El conjunto de datos de prueba se puede ver en la siguiente imagen:
+Como les adelanté previamente, esto no es una pregunta trivial. Dependerá mucho de los algoritmos utilizados y del contexto del problema. Presento entonces la problematica que nos acompañará durante este artículo: un conjunto de datos de clientes basado en sus ingresos anuales y su puntuación de gastos (*spending score*). Este conjunto de datos nos permite ver, en función de cuánto cobra un cliente, su comportamiento de gastos del 1 al 100, 1 siendo clientes conservadores respecto a gastos, y 100 un cliente con alta propensión al gasto, que compra de manera frecuente o adquiere productos de alto valor. El conjunto de datos de prueba se puede ver en la siguiente imagen:
 
 ![Dataset de clientes](/assets/img/Pasted image 20261102023038.png)
 
@@ -53,7 +53,7 @@ $$
 D(\mathbf{x}_{i},\mathbf{x}_{j}) = \left(\sum_{l=1}^d |x_{il}-x_{jl}|^2\right)^{1/2}
 $$
 
-Como no es el objetivo de este artículo, no vamos a detenernos mucho en esto, pero se puede demostrar que la métrica euclidiana cumple simetría, positividad, la desigualdad triangular y la reflexividad, lo que la hace efectivamente una métrica (perdonen el uso liberal de esta palabra previo a la demostración).
+Como no es el objetivo de este artículo, no vamos a detenernos mucho en esto, pero se puede demostrar que la métrica euclidiana cumple simetría, positividad, la desigualdad triangular y reflexividad, lo que la hace efectivamente una métrica (perdonen el uso liberal de esta palabra previo a la demostración).
 
 Un problema que aparece con la distancia euclidiana es que valores de características en unidades distintas a otras, o de gran valor y varianzas tienden a dominar las otras características. Una forma de lidiar con este problema es la normalización, precisamente la estandarización:
 
@@ -131,12 +131,12 @@ Podemos ver cómo la modificación del $K$ movió nuestros grupos a 3, con el ce
 Las principales limitaciones son las siguientes:
 
 1. **Caer en óptimos locales:** El algoritmo no nos puede asegurar que vaya a caer en un óptimo global. De esta forma, diferentes puntos de inicio de los centroides nos darán convergencias distintas. En teoría, no existen métodos eficientes y universales para determinar las particiones iniciales. Un potencial método podría ser introducir un algoritmo genético, como el GKA (Krishna y Murty, 1999).
-2. **El número de $K$:** K-Means asume que el usuario sabe el número óptimo de centros de cluster antes de empezar. Esto es fácil de notar en casos donde se puede visualizar la información, pero para datos multidimensionales, no es posible ver los datos y de ahí sacar los números de clusters. Entonces, la identificación de un $K$ óptimo es de suma importancia. El algoritmo ISODATA (Ball y Hall, 1967) intenta afrontar este problema.
+2. **El número de $K$:** K-Means asume que el usuario sabe el número óptimo de centros de cluster antes de empezar. Esto es fácil de notar en casos donde se puede visualizar la información, pero para datos de dimension mayor a 3, no es posible ver los datos y de ahí sacar los números de clusters. Entonces, la identificación de un $K$ óptimo es de suma importancia. El algoritmo ISODATA (Ball y Hall, 1967) intenta afrontar este problema.
 3. **Robustez:** K-Means es sensible a *outliers* y ruido. El cálculo de los centros considera todos los datos, incluyendo los *outliers*. Incluso si un dato está muy lejos de un centro de cluster, se fuerza a pertenecer a algún cluster para el cálculo de posiciones.
 
 ## Parte 4. Fuzzy C-Means
 
-Con la mayor parte de la gimnasia mental realizada en el algoritmo previo, voy a ir relativamente rápido con este método. Fuzzy C-Means es muy similar a K-Means, con una diferencia clave: la matriz de pertenencia ya no es de 0s y 1s, sino que toma valores continuos entre 0 y 1. Podemos decir que es una matriz difusa.
+Con la mayor parte de la gimnasia mental realizada en el algoritmo previo, voy a ir relativamente rápido con este método. Fuzzy C-Means es muy similar a K-Means, con una diferencia clave: la matriz de pertenencia ya no es de 0s y 1s, sino que toma valores continuos entre 0 y 1. Podemos decir que es una matriz difusa. Esto resulta interesante en casos donde la pertenencia a un grupo no es necesariamente estricta, si no que un dato puede pertenecer "mas o menos" a mas de un cluster. 
 
 El proceso de Fuzzy C-Means es muy similar al de K-Means:
 
@@ -179,7 +179,7 @@ donde ahora los valores son difusos en lugar de ser estrictos. Cabe destacar que
 ## Conclusiones
 
 Algunas de las cosas no mencionadas fueron los campos de aplicacion. Para mencionar a unos pocos: medicina (definicion de taxonomia, gene and protein function identificaction (no me pidan que traduzca eso, no soy biologo), diagnostico de enfermedades), ingenieria (reconocimiento de voz, analisis de señales de radar, compresión de información y limpiado de ruido).  
-En conclusión, hemos visto que el clustering no es ni más ni menos que el intento artificial de emular una característica que tenemos todos los seres humanos. Cabe destacar que los algoritmos vistos acá son puramente introductorios, existen otros de familias totalmente distintas (clustering jerarquico) que quizás sean explorados en el futuro by yours truly.  
+En conclusión, hemos visto que el clustering no es ni más ni menos que el intento artificial de emular una característica que tenemos todos los seres humanos. Cabe destacar que los algoritmos vistos acá son  introductorios, existen otros de familias totalmente distintas (clustering jerarquico por ejemplo) que quizás sean explorados en el futuro by yours truly.  
 
 ## Agradecimientos
 
