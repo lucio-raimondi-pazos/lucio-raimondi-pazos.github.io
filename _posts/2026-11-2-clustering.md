@@ -120,11 +120,8 @@ $$
 Cabe destacar la naturaleza de la matriz: es una matriz binaria, solo acepta 0s y 1s. Esto es importante a tener en cuenta para cuando veamos el próximo método de agrupamiento.
 
 Volviendo al ejemplo de los ingresos anuales y el *spending score*, se muestra a continuación el resultado de aplicar K-Means sobre esos datos:
-
 ![Resultado K-Means K=5](/assets/img/Pasted image 20261102032614.png)
-
 La leyenda indica el color de cada cluster, y la X roja indica los centroides de cada uno. Como dijimos antes, $K$, la cantidad de clusters, es un hiperparámetro. Resulta de interés ver qué pasa si modificamos este número a uno no tan óptimo, como por ejemplo 3.
-
 ![Resultado K-Means K=3](/assets/img/Pasted image 20261102032752.png)
 
 Podemos ver cómo la modificación del $K$ movió nuestros grupos a 3, con el centro del grupo 2 fuera de la zona de cualquier cluster. ¿Es esta una partición útil? Depende, quizás nos conviene agrupar datos del medio hacia la izquierda para delimitar un límite en los ingresos anuales, o quizás esto es basura para el usuario. Como siempre, el contexto importa.
