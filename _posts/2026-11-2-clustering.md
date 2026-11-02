@@ -174,3 +174,18 @@ donde ahora los valores son difusos en lugar de ser estrictos. Cabe destacar que
 1. Similar a K-Means, pero más grave aún, Fuzzy C-Means tiene una alta sensibilidad a *outliers* y a ruido.
 2. Convergencia a mínimos locales.
 3. Mayor costo computacional.
+
+
+## Conclusiones
+
+Algunas de las cosas no mencionadas fueron los campos de aplicacion. Para mencionar a unos pocos: medicina (definicion de taxonomia, gene and protein function identificaction (no me pidan que traduzca eso, no soy biologo), diagnostico de enfermedads), ingenieria (reconocimiento de voz, analisis de señales de radar, compresión de información y limpiado de ruido).  
+En conclusión, hemos visto que el clustering no es ni más ni menos que el intento artificial de emular una característica que tenemos todos los seres humanos. Cabe destacar que los algoritmos vistos acá son puramente introductorios, existen otros de familias totalmente distintas (clustering jerarquico) que quizás sean explorados en el futuro by yours truly.  
+
+## Agradecimientos
+
+El autor quiere agradecer profundamente a Gustavo Meschino y toda la cátedra de Inteligencia Computacional de la Facultad de Ingenieria, Universidad Nacional de Mar del Plata, que me ayudaron a dar los primeros pasos en el apasionante mundo de la inteligencia artificial. 
+
+
+## Links
+
+- Se adjunta el link a un Google Colab con los codigos realizados para los graficos mostrados en el articulo. Sean libres de copiarlo y modificarlo a su gusto:  https://colab.research.google.com/drive/1z7NLNtrypPTeSeKItNRkLE6jnC2t1btR?usp=sharing 
