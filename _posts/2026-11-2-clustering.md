@@ -1,5 +1,5 @@
 ---
-title: Introduccion a la teoria de Clustering
+title: Introducción a la teoría de Clustering con K-Means y Fuzzy C-Means
 date: 2026-11-02 01:25:00 -0300
 categories:
   - Clustering
