@@ -183,7 +183,7 @@ En conclusión, hemos visto que el clustering no es ni más ni menos que el inte
 
 ## Agradecimientos
 
-El autor quiere agradecer profundamente a Gustavo Meschino y toda la cátedra de Inteligencia Computacional de la Facultad de Ingenieria, Universidad Nacional de Mar del Plata, que me ayudaron a dar los primeros pasos en el apasionante mundo de la inteligencia artificial. 
+El autor quiere agradecer profundamente al Dr. Gustavo Meschino y toda la cátedra de Inteligencia Computacional de la Facultad de Ingenieria, Universidad Nacional de Mar del Plata, que me ayudaron a dar los primeros pasos en el apasionante mundo de la inteligencia artificial. 
 
 
 ## Links
