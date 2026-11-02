@@ -188,4 +188,4 @@ El autor quiere agradecer profundamente a Gustavo Meschino y toda la cátedra de
 
 ## Links
 
-- Se adjunta el link a un Google Colab con los codigos realizados para los graficos mostrados en el articulo. Sean libres de copiarlo y modificarlo a su gusto:  https://colab.research.google.com/drive/1z7NLNtrypPTeSeKItNRkLE6jnC2t1btR?usp=sharing 
+- Se adjunta el link a un Google Colab con los codigos realizados para los graficos mostrados en el articulo. Sean libres de copiarlo y modificarlo a su gusto: [Google Colab de Clustering](https://colab.research.google.com/drive/1z7NLNtrypPTeSeKItNRkLE6jnC2t1btR?usp=sharing) 
