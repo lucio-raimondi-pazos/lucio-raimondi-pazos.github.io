@@ -178,7 +178,7 @@ donde ahora los valores son difusos en lugar de ser estrictos. Cabe destacar que
 
 ## Conclusiones
 
-Algunas de las cosas no mencionadas fueron los campos de aplicacion. Para mencionar a unos pocos: medicina (definicion de taxonomia, gene and protein function identificaction (no me pidan que traduzca eso, no soy biologo), diagnostico de enfermedads), ingenieria (reconocimiento de voz, analisis de señales de radar, compresión de información y limpiado de ruido).  
+Algunas de las cosas no mencionadas fueron los campos de aplicacion. Para mencionar a unos pocos: medicina (definicion de taxonomia, gene and protein function identificaction (no me pidan que traduzca eso, no soy biologo), diagnostico de enfermedades), ingenieria (reconocimiento de voz, analisis de señales de radar, compresión de información y limpiado de ruido).  
 En conclusión, hemos visto que el clustering no es ni más ni menos que el intento artificial de emular una característica que tenemos todos los seres humanos. Cabe destacar que los algoritmos vistos acá son puramente introductorios, existen otros de familias totalmente distintas (clustering jerarquico) que quizás sean explorados en el futuro by yours truly.  
 
 ## Agradecimientos
