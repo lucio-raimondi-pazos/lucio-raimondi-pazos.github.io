@@ -85,4 +85,4 @@ Parte del artículo fue escrito tomando información del libro *Artificial Intel
 
 ## Links
 
-Se adjunta un link con código para representar un perceptrón simple intentando aprender la función AND: [Google Colab Perceptron Simple](ACÁ_PEGAS_TU_URL)
+Se adjunta un link con código para representar un perceptrón simple intentando aprender la función AND: [Google Colab Perceptron Simple](https://colab.research.google.com/drive/1-32C08gA2qTxSHv-iMVnBhf08YA_TAuG?usp=sharing)
