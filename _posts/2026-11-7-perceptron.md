@@ -1,6 +1,6 @@
 ---
 title: "Redes Neuronales desde el principio: el Perceptron"
-date: 2026-11-03 00:00 -0300
+date: 2026-11-07 00:00 -0300
 categories:
   - Neural Networks
 tags:
